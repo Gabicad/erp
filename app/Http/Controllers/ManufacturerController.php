@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manufacturer;
-use App\Http\Requests\StoreAttributeRequest;
-use App\Http\Requests\UpdateAttributeRequest;
+use App\Http\Requests\StoreManufacturerRequest;
+use App\Http\Requests\UpdateManufacturerRequest;
 
 class ManufacturerController extends Controller
 {
