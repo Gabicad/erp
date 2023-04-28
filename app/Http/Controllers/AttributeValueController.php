@@ -13,7 +13,7 @@ class AttributeValueController extends Controller
      */
     public function index(): \Illuminate\Database\Eloquent\Collection
     {
-        return AttributeValue::all();
+        return AttributeValue::with('attribute')->get();
     }
 
     /**

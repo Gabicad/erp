@@ -25,4 +25,10 @@ class AttributeValue extends Model
     protected $fillable = [
         'attribute_id', 'value_name'
     ];
+
+
+    public function attribute(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Attribute::class);
+    }
 }
