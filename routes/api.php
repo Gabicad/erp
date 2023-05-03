@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManufacturerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,7 @@ Route::apiResources([
     'attribute-values' => AttributeValueController::class,
     'categories' => CategoryController::class,
     'currencies' => CurrencyController::class,
+    'manufacturers' => ManufacturerController::class,
     'measurement-units' => MeasurementUnitController::class,
     'products' => ProductController::class,
     'product-instances' => ProductInstanceController::class,
