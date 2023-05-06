@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\VariantAttribute;
+use App\Models\ProductVariantAttribute;
 use Illuminate\Auth\Access\Response;
 use app\Models\User;
 
-class VariantAttributePolicy
+class ProductVariantAttributePolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class VariantAttributePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, VariantAttribute $variantAttribute): bool
+    public function view(User $user, ProductVariantAttribute $variantAttribute): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class VariantAttributePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, VariantAttribute $variantAttribute): bool
+    public function update(User $user, ProductVariantAttribute $variantAttribute): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class VariantAttributePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, VariantAttribute $variantAttribute): bool
+    public function delete(User $user, ProductVariantAttribute $variantAttribute): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class VariantAttributePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, VariantAttribute $variantAttribute): bool
+    public function restore(User $user, ProductVariantAttribute $variantAttribute): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class VariantAttributePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, VariantAttribute $variantAttribute): bool
+    public function forceDelete(User $user, ProductVariantAttribute $variantAttribute): bool
     {
         //
     }

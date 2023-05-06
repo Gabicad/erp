@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('variant_attributes', function (Blueprint $table) {
+        Schema::create('product_variant_attributes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_variant_id');
             $table->unsignedBigInteger('attribute_value_id');

@@ -15,5 +15,10 @@ class Currency extends Model
     protected $fillable = [
         'code', 'symbol', 'is_default'
     ];
+
+    protected $casts = [
+        'is_default' => 'boolean',
+    ];
+
 }
 
