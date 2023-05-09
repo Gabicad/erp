@@ -29,4 +29,4 @@ jobs:
           name: Deploy to server (incremental)
           command: |
             rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ gabicad_deploy_backend@backend.biogames.hu:./web/
-            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_deploy_backend@backend.biogames.hu 'cd ./web/ && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_deploy_backend@backend.biogames.hu 'cd ./web/ && php8.1 artisan config:cache && php8.1 artisan route:cache && php8.1 artisan view:cache && php8.1 artisan migrate --force'
