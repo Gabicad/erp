@@ -18,7 +18,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx" # Replace with the fingerprint of your SSH key
+            - "7f:cc:db:83:e3:ff:55:08:61:0d:ce:07:8b:64:81:d6" # Replace with the fingerprint of your SSH key
       - run:
           name: Install dependencies
           command: composer install --prefer-dist --no-scripts --no-progress --no-interaction
