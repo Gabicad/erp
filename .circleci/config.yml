@@ -21,7 +21,7 @@ jobs:
           command: sudo apt-get update && sudo apt-get install -y rsync
       - add_ssh_keys:
           fingerprints:
-            - "7f:cc:db:83:e3:ff:55:08:61:0d:ce:07:8b:64:81:d6" # Replace with the fingerprint of your SSH key
+            - "b3:80:6a:7f:ae:a5:dc:90:fe:a8:f1:2c:3d:ec:45:da" # Replace with the fingerprint of your SSH key
       - run:
           name: Install dependencies
           command: composer install --prefer-dist --no-scripts --no-progress --no-interaction
