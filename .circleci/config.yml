@@ -16,6 +16,9 @@ jobs:
       - image: cimg/php:8.2.5 # or the PHP version your project requires
     steps:
       - checkout
+      - run:
+          name: Install rsync
+          command: sudo apt-get update && sudo apt-get install -y rsync
       - add_ssh_keys:
           fingerprints:
             - "7f:cc:db:83:e3:ff:55:08:61:0d:ce:07:8b:64:81:d6" # Replace with the fingerprint of your SSH key
