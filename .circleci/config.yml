@@ -9,7 +9,7 @@ workflows:
           filters:
             branches:
               only:
-                - main # or your default branch
+                - master # or your default branch
 jobs:
   deploy:
     docker:
