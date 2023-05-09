@@ -25,5 +25,5 @@ jobs:
       - run:
           name: Deploy to server
           command: |
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./* gabicad_backend_biogames@server1.biogames.hu:/web/
-            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_backend_biogames@server1.biogames.hu:/web/ 'cd /web && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./* gabicad_backend_biogames@server1.biogames.hu:/
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_backend_biogames@server1.biogames.hu:/ 'cd /web && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
