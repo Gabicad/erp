@@ -13,7 +13,7 @@ workflows:
 jobs:
   deploy:
     docker:
-      - image: circleci/php:8.0 # or the PHP version your project requires
+      - image: circleci/php:8.2.5 # or the PHP version your project requires
     steps:
       - checkout
       - add_ssh_keys:
