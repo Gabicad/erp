@@ -23,7 +23,7 @@ jobs:
           name: Install dependencies
           command: composer install --prefer-dist --no-scripts --no-progress --no-interaction
       - run:
-          name: Deploy to server
+          name: Deploy to server (incremental)
           command: |
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./* gabicad_backend_biogames@server1.biogames.hu:/
-            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_backend_biogames@server1.biogames.hu:/ 'cd /web && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
+            rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ gabicad_backend_biogames@server1.biogames.hu:./
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_backend_biogames@server1.biogames.hu 'cd ./ && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
