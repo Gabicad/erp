@@ -30,7 +30,7 @@ use App\Http\Controllers\ProductVariantController;
 use App\Http\Controllers\PurchaseOrderController;
 use App\Http\Controllers\PurchaseOrderItemController;
 use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\VariantAttributeController;
+use App\Http\Controllers\ProductVariantAttributeController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\WarehouseProductInstanceController;
 
@@ -47,7 +47,7 @@ Route::apiResources([
     'purchase-orders' => PurchaseOrderController::class,
     'purchase-order-items' => PurchaseOrderItemController::class,
     'suppliers' => SupplierController::class,
-    'variant-attributes' => VariantAttributeController::class,
+    'product_variant-attributes' => ProductVariantAttributeController::class,
     'warehouses' => WarehouseController::class,
     'warehouse-product-instances' => WarehouseProductInstanceController::class,
 ]);

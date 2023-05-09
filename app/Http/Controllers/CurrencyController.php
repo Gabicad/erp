@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Currency;
+use App\Models\Currency;
 use App\Http\Requests\StoreCurrencyRequest;
 use Illuminate\Http\Response;
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static create(mixed $validated)
  */
-class VariantAttribute extends Model
+class ProductVariantAttribute extends Model
 {
     use HasFactory;
 }

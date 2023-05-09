@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('product_variants', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->string('sku')->unique();
-            $table->decimal('price_modifier', 10, 2);
-            $table->unsignedBigInteger('currency_id');
+            $table->string('sku')->nullable()->unique();
+            $table->decimal('price_modifier', 10, 2)->nullable();
+            $table->unsignedBigInteger('currency_id')->nullable();
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products');

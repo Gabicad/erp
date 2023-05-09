@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -13,14 +15,15 @@ class ProductController extends Controller
      */
     public function index(): \Illuminate\Database\Eloquent\Collection
     {
-        return Product::all();
+        return Product::with(['currency','product_images'])->get();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request): Product
+    public function store(Request $request)
     {
+        return $request->all();
         return Product::create($request->validated());
     }
 
