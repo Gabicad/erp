@@ -1,0 +1,29 @@
+version: 2.1
+orbs:
+  php: circleci/php@1.0
+workflows:
+  deploy:
+    jobs:
+      - deploy:
+          context: your-context # optional, if you need environment variables
+          filters:
+            branches:
+              only:
+                - main # or your default branch
+jobs:
+  deploy:
+    docker:
+      - image: circleci/php:8.2 # or the PHP version your project requires
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx" # Replace with the fingerprint of your SSH key
+      - run:
+          name: Install dependencies
+          command: composer install --prefer-dist --no-scripts --no-progress --no-interaction
+      - run:
+          name: Deploy to server
+          command: |
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./* gabicad_backend_biogames@server1.biogames.hu:/
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_backend_biogames@server1.biogames.hu:/ 'cd / && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force'
