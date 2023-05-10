@@ -5,15 +5,14 @@ workflows:
   deploy:
     jobs:
       - deploy:
-          context: your-context # optional, if you need environment variables
           filters:
             branches:
               only:
-                - master # or your default branch
+                - master
 jobs:
   deploy:
     docker:
-      - image: cimg/php:8.2.5 # or the PHP version your project requires
+      - image: cimg/php:8.2.5
     steps:
       - checkout
       - run:
@@ -28,5 +27,5 @@ jobs:
       - run:
           name: Deploy to server (incremental)
           command: |
-            rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ gabicad_deploy_backend@backend.biogames.hu:./web/
-            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null gabicad_deploy_backend@backend.biogames.hu 'cd ./web/ && php8.1 artisan config:cache && php8.1 artisan route:cache && php8.1 artisan view:cache && php8.1 artisan migrate --force'
+            rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ ${SSH_USER}:./web/
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${SSH_USER} 'cd ./web/ && php8.1 artisan config:cache && php8.1 artisan route:cache && php8.1 artisan view:cache && php8.1 artisan migrate --force'
