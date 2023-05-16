@@ -33,9 +33,7 @@ class AuthController extends Controller
 
 
     public function getAuthUser(Request $request){
-        $user = $request->user();
-        $user->role = ["user", "admin"];
-        return $user;
+        return $request->user();
     }
 
     public function login(Request $request){
