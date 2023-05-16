@@ -30,13 +30,13 @@ use App\Http\Controllers\WarehouseProductInstanceController;
 |
 */
 Route::post("/login",[AuthController::class,'login']);
-Route::post("/register",[AuthController::class,'register']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 Route::middleware('auth:sanctum')->group(function () {
+
+    Route::get("/who-am-i",[AuthController::class,'getAuthUser']);
+
     Route::apiResources([
         'attributes' => AttributeController::class,
         'attribute-values' => AttributeValueController::class,
