@@ -27,5 +27,9 @@ class Product extends Model
         return $this->belongsTo(Currency::class);
     }
 
+    public function manufacturer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Manufacturer::class);
+    }
 
 }
