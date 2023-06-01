@@ -13,6 +13,7 @@ class Product extends Model
     use HasFactory;
     protected $casts = [
         'active' => 'boolean',
+        'base_price' => 'number',
     ];
 
 
