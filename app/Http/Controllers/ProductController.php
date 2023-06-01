@@ -18,6 +18,17 @@ class ProductController extends Controller
         return Product::with(['currency','manufacturer','category'])->get();
     }
 
+    public function getAllInactive(): \Illuminate\Database\Eloquent\Collection
+    {
+        return Product::where('active','=',0)->with(['currency','manufacturer','category'])->get();
+    }
+
+    public function getAllActive(): \Illuminate\Database\Eloquent\Collection
+    {
+        return Product::where('active','=',1)->with(['currency','manufacturer','category'])->get();
+    }
+
+
     /**
      * Store a newly created resource in storage.
      */

@@ -36,6 +36,8 @@ Route::post("/login",[AuthController::class,'login']);
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::get("/who-am-i",[AuthController::class,'getAuthUser']);
+    Route::get("/products/getAllInactive",[ProductController::class,'getAllInactive']);
+    Route::get("/products/getAllActive",[ProductController::class,'getAllActive']);
 
     Route::apiResources([
         'attributes' => AttributeController::class,
