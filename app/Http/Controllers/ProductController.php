@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index(): \Illuminate\Database\Eloquent\Collection
     {
-        return Product::with(['currency','product_images'])->get();
+        return Product::with(['currency','product_images','manufacturer'])->get();
     }
 
     /**
